@@ -1,0 +1,93 @@
+:root {
+  --comecore-navy: #071a3a;
+  --comecore-blue: #0b6bdc;
+  --comecore-cyan: #0ca8cf;
+  --comecore-canvas: #f5f8fb;
+  --comecore-line: #dfe7ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--comecore-canvas);
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--comecore-navy);
+  background: var(--comecore-canvas);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--comecore-blue);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef3f7;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 32px;
+  border: 3px solid #eef3f7;
+  border-radius: 999px;
+  background: #98a8b9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #71849a;
+}
+
+:focus-visible {
+  outline: 2px solid var(--comecore-blue);
+  outline-offset: 3px;
+}
+
+@keyframes signal-travel {
+  from {
+    stroke-dashoffset: 46;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.brand-signal__path {
+  animation: signal-travel 5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
